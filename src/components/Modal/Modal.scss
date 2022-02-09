@@ -1,0 +1,15 @@
+.modal {
+    width: 15vw;
+    height: 100vw;
+    background-color:black;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 100;
+    display: none;
+    .modal-title {
+        color: white;
+        text-align: center;
+        margin: 20px 0px 0px 0px;
+    }
+}   

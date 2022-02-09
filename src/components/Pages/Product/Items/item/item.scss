@@ -1,0 +1,58 @@
+.item {
+    border:solid 1px black;
+    flex-basis: 25%;
+    margin: 10px 10px 10px 10px;
+    background-color:orange;
+    min-height: 250px;
+    border-radius: 10px;
+    .item-id {
+        text-align: center;
+        color: white;
+        margin: 30px 0px 0px 0px;
+        text-transform: uppercase;
+    }
+    .item-title {
+        text-align: center;
+        color: white;
+        margin: 10px 0px 10px 0px;
+        text-transform: uppercase;
+    }
+    .item-body {    
+        text-align: center;
+        color: white;
+        margin: 10px 0px 10px 0px;
+
+    }
+    .fa.fa-close {
+        float: right;
+        margin: 10px 10px 10px 0px;
+        cursor: pointer;
+        display: none;
+    }
+    .item-img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 10rem;
+        img {
+            width: 80%;
+            height: 100%;
+            border-radius:10px;
+        }
+    }
+
+    .item-order__content {
+        display: flex;
+        justify-content: center;
+        .item-order__button {
+            background-color:black;
+            width: 80%;
+            height: 1.5rem;
+            border-radius:10px;
+            color:white;
+            margin: 10px 0px 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+}

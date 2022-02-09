@@ -1,0 +1,13 @@
+.footer {
+    max-width: 1440px;
+    width: 100vw;
+    height: 80px;
+    position: relative;
+    bottom:0;
+    background-color:orange;
+    .footer-title {
+        margin: 10px 10px;
+        text-transform: uppercase;
+        color: white;
+    }
+}

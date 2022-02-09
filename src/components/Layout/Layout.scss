@@ -1,0 +1,9 @@
+.layout {
+    max-width: 1440px;
+    .main {
+        display: flex;
+        .content {
+            width: 100%;
+        }
+    }
+}
