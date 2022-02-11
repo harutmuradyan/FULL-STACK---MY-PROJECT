@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import "./Header.scss"
 
 
-const Header = ({setActive}) => {
+const Header = ({counter , setModalActive}) => {
     return(
         <header className="header">
             <div className="header-logo">
@@ -49,12 +49,12 @@ const Header = ({setActive}) => {
                     </li>
                     <li className="header-navbar__item">
                         <button className="header-navbar__link barbtn"
-                            
+                            onClick={() => setModalActive(true)}
                             >
                             <a>
                                 <i className="fa fa-bars"></i>
                                 <div className="counter">
-                                    <p>1</p>
+                                    <p>{counter}</p>
                                 </div>
                             </a>   
                         </button>

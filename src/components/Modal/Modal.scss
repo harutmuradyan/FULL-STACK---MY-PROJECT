@@ -1,15 +1,30 @@
 .modal {
-    width: 15vw;
+    width: 20vw;
     height: 100vw;
-    background-color:black;
+    background-color: black;
     position: fixed;
     right: 0px;
     top: 0px;
     z-index: 100;
-    display: none;
+    transform: scale(0);
     .modal-title {
         color: white;
         text-align: center;
-        margin: 20px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .btnclose {
+        cursor: pointer;
+        background-color:black;
+        border:none;
+        margin: 20px 20px;
+        i {
+            font-size: 1.5rem;
+            color: white;
+        }
     }
 }   
+
+.modal.active {
+    transform: scale(1);
+}

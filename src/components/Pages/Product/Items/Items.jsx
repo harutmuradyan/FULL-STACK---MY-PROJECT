@@ -3,14 +3,20 @@ import './Items.scss';
 import Item from "./item/item";
 import PropTypes from 'prop-types'
 
-const Items = ({data , title}) => {
+const Items = ({data , title , addCounter}) => {
     return (
         <>
             <div className="items">
                 <h2 className="items-title">{title}</h2>
                 <div className="items-content">
                     {data.map(item => 
-                        <Item  key={item.id} title={item.title}  body={item.body} id={item.id} />
+                        <Item   key={item.id} 
+                                title={item.title}  
+                                body={item.body} 
+                                id={item.id} 
+                                addCounter={addCounter}
+                                />
+                                
                     )}
                 </div>
             </div>
@@ -19,7 +25,7 @@ const Items = ({data , title}) => {
 }
 
 Items.propTypes = {
-    data : PropTypes.array.isRequired
+    data : PropTypes.array.isRequired,
 }
 
 export default Items;

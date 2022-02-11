@@ -2,7 +2,7 @@
 import React from "react";
 import './item.scss';
 
-const Item = ({id,title,body}) => {
+const Item = ({id,title,body,addCounter}) => {
 
     return (
         <>
@@ -16,7 +16,7 @@ const Item = ({id,title,body}) => {
                 <p  className="item-body">{body}</p>
                 <div className="item-order__content">
                     <button className="item-order__button"
-                            
+                            onClick={addCounter}
                             >   
                             by Order
                     </button>

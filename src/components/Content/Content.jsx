@@ -8,7 +8,7 @@ import Product from '../Pages/Product/Product';
 import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
 
-const Content = ({conuter}) => {
+const Content = ({addCounter , data}) => {
 
 
     return (
@@ -18,8 +18,12 @@ const Content = ({conuter}) => {
                      element={<Home/>}
               />
               <Route path='/product'
-                     element={<Product    
-                     />}
+                     element={
+                            <Product 
+                            addCounter={addCounter}
+                            data={data}
+                     />
+                     }
               />
               <Route path='/about' 
                      element={<About/>}
