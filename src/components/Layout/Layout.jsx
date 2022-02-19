@@ -6,19 +6,19 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
 
-const Layout = ({children , counter , modalActive , setModalActive , data}) => {
+const Layout = ({children , counter , modalActive , setModalActive }) => {
 
     return (
         <div className='layout'>
           <Header
-            counter={counter}  setModalActive={setModalActive}
+            counter={counter}  setModalActive={setModalActive} 
           />
               <main className="main"
               
               >
                   {children}
                   <Modal
-                    modalActive={modalActive} setModalActive={setModalActive} data={data}
+                    modalActive={modalActive} setModalActive={setModalActive}
                   />
               </main>
           <Footer/>

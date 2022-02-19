@@ -1,14 +1,16 @@
 import React from "react";
-import Items from "./Items/Items";
+import Slayder from "../../Slayder/Slayder";
+import Items from "../Items/Items";
 import './Product.scss'
 
-const Product = ({addCounter , data}) => {
+const Product = ({addCounter , data }) => {
 
     return (
         <div className="product-page">
+            <Slayder/>
             <Items data={data} title="new films" addCounter={addCounter}/>
-            <Items data={data} title="Top films"/>
-            <Items data={data} title="Favorit films"/>
+            <Items data={data} title="Top films" addCounter={addCounter}/>
+            <Items data={data} title="Favorit films" addCounter={addCounter}/>
         </div>
     )
 }

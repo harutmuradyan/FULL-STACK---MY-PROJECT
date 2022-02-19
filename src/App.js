@@ -1,17 +1,16 @@
-import React,{useState } from 'react';
+import React,{useState , useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import Content from './components/Content/Content';
 import './App.scss';
+import { data } from './redux/constants/actions-types';
 
 function App() {
 
-  const [carts,setCarts] = useState([
-    {id:1, title : "Forsage 8", body : "asd"},
-    {id:2, title : "Forsage 8", body : "asd"},
-    {id:3, title : "Forsage 8", body : "asd"},
-    {id:4, title : "Forsage 8", body : "asd"},
-    {id:5, title : "Forsage 8", body : "asd"}
-]);
+  const [carts,setCarts] = useState(
+    data
+  );
+
+
 
   const [counter, setCounter] = useState(0);
   const [modalActive,setModalActive] = useState(false);
@@ -20,13 +19,24 @@ function App() {
     setCounter(counter + 1);
   }
 
-  
+
+  useEffect(() => {
+    fetch('')
+      .then(res => res.json())
+      .then(myRes => setCarts(myRes))
+      .catch(err => {
+        console.error(err);
+      });
+  }, [])
+
+  console.log(carts)
   return (
     <div className='app'>
        <Layout counter={counter}
                modalActive={modalActive} 
                setModalActive={setModalActive} 
-               data={carts}>
+               data={carts}
+               >
         <Content addCounter={addCounter} data={carts}/>
       </Layout>
     </div>

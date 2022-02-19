@@ -1,0 +1,24 @@
+.about {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .about-content {
+        background-color:#333;
+        width: 80%;
+        min-height: 450px;
+        border:solid 1px black;
+        margin: 20px 0px 20px 0px;
+        padding: 20px 20px 20px 20px;
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        p {
+            color:white;
+            text-align: center;
+        }
+    }
+}

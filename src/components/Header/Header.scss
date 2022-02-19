@@ -1,7 +1,7 @@
 .header {
     max-width: 1440px;
     width: 100vw;
-    height: 80px;
+    height: 60px;
     background-color:orange;
     display: flex;
     .header-logo {
@@ -34,8 +34,8 @@
             .header-navbar__item {
                 margin: 20px 10px;
                 list-style-type: none;
-                a {
-                    font-size: 1.5rem;
+                .header-navbar__link {
+                    font-size: 1.5vw;
                     text-decoration: none;
                     color: wheat;
                     text-transform: uppercase;
@@ -47,23 +47,23 @@
                     cursor: pointer;
                     border: none;
                     background-color:orange;
-                    a {
-                        .counter {
-                            position: absolute;
-                            width: 20px;
-                            height: 20px;
-                            background-color:black;
-                            border-radius:10px;
-                            top: 12px;
-                            right: 12px;
-                            p {
-                                display: flex;
-                                justify-content: center;
-                                font-size: 1rem;
-                                margin-top: 2px;
-                            }
+                     
+                    .counter {
+                        position: relative;
+                        width: 20px;
+                        height: 20px;
+                        background-color:black;
+                        border-radius:10px;
+                        bottom: 35px;
+                        left: 10px;
+                        p {
+                            display: flex;
+                            justify-content: center;
+                            font-size: 1rem;
+                            padding-top: 2px;
                         }
                     }
+                    
                 }
             }
         }

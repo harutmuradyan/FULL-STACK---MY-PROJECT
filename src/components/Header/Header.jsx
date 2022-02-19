@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import "./Header.scss"
 
 
-const Header = ({counter , setModalActive}) => {
+const Header = ({counter , setModalActive }) => {
     return(
         <header className="header">
             <div className="header-logo">
@@ -20,43 +20,41 @@ const Header = ({counter , setModalActive}) => {
             <div className="header-navbar">
                 <ul className="header-navbar__items">
                     <li className="header-navbar__item">
-                        <Link to='/' className="header-navbar__link">
-                            <a>
-                                Home
-                            </a>
+                        <Link to="/order">
+                            <button className="header-navbar__link barbtn">
+                                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                <div className="counter">
+                                    <p>{counter}</p>
+                                </div>
+                            </button>
                         </Link>
                     </li>
                     <li className="header-navbar__item">
-                        <Link to='/product' className="header-navbar__link">
-                            <a>
-                                Product
-                            </a>
+                        <Link to='/' className="header-navbar__link">
+                            Product
                         </Link>
                     </li>
                     <li className="header-navbar__item">
                         <Link to='/about' className="header-navbar__link">
-                            <a>
-                                About
-                            </a>
+                            About
                         </Link>
                     </li>
                     <li className="header-navbar__item">
                         <Link to='/contact' className="header-navbar__link">
-                            <a>
-                                Contact
-                            </a>
+                            Contact
                         </Link>
                     </li>
                     <li className="header-navbar__item">
+                        <Link to='/login' className="header-navbar__link">
+                            Login
+                        </Link>
+                    </li>
+                    <li className="header-navbar__item " onClick={(e) => e.stopPropagation()}>
                         <button className="header-navbar__link barbtn"
-                            onClick={() => setModalActive(true)}
+                            onClick={(e) => 
+                                setModalActive(true) }
                             >
-                            <a>
-                                <i className="fa fa-bars"></i>
-                                <div className="counter">
-                                    <p>{counter}</p>
-                                </div>
-                            </a>   
+                            <i className="fa fa-bars"></i>
                         </button>
                     </li>
                 </ul>

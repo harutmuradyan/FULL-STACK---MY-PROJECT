@@ -1,26 +1,68 @@
 .modal {
-    width: 20vw;
+    width: 15vw;
     height: 100vw;
-    background-color: black;
+    background-color:#333;
     position: fixed;
     right: 0px;
     top: 0px;
     z-index: 100;
     transform: scale(0);
-    .modal-title {
-        color: white;
-        text-align: center;
-        margin: 0px 0px 0px 0px;
+    border-left:solid 1px white;
+    .modal-content__block {
+        background-color:orange;
+        height: 60px;
+        .modal-btnclose {
+            cursor: pointer;
+            border:none;
+            i {
+                margin: 20px 20px;
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
     }
+    .modal-bar{
+        margin-top: 0px;
+        .modal-bar__title{
+            text-align: center;
+            margin: 10px 0px 20px;
+            text-transform: uppercase;
+            color:white;
+        }
+        .modal-bar_content{           
+           .modal-bar__item {
+               list-style-type: none;
+               margin: 10px 0px 10px 0px;
+               .modal-bar__linq {
+                   text-transform: uppercase;
+                   color: white;
+                   text-decoration: none;
+                   margin-left: 20px;
+                   font-size: 1.2vw;
+                   i {
+                       margin-right: 20px;
+                   }
 
-    .btnclose {
-        cursor: pointer;
-        background-color:black;
-        border:none;
-        margin: 20px 20px;
-        i {
-            font-size: 1.5rem;
-            color: white;
+                   &:hover {
+                       text-decoration:underline;
+                   }
+               }
+           }
+       } 
+    }
+    .modal-socialSite {
+        background-color:orange;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top:230px;
+        .modal-socialSite__linq {
+            img {
+                margin: 15px 10px 15px 10px;
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 }   

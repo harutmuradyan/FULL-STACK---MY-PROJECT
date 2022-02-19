@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import './item.scss';
+import './Item.scss';
 
-const Item = ({id,title,body,addCounter}) => {
+const Item = ({id,title,name,image,body,addCounter}) => {
+
 
     return (
         <>
             <div className="item">
                 <i  className="fa fa-close"></i>
-                <p  className="item-id">{id}</p>
-                <h2 className="item-title">{title}</h2>
                 <div className="item-img">
-                    <img src="https://oboi-telefon.ru/wallpapers/26718/37768.jpg"></img>
+                    <img src={image}/>
                 </div>
                 <p  className="item-body">{body}</p>
                 <div className="item-order__content">
@@ -19,6 +18,11 @@ const Item = ({id,title,body,addCounter}) => {
                             onClick={addCounter}
                             >   
                             by Order
+                    </button>
+                </div>
+                <div className="item-see__content">
+                    <button  className="item-see__button">
+                        By See
                     </button>
                 </div>
             </div>
