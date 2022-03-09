@@ -23,7 +23,6 @@ const Comedy = ({data , addCounter }) => {
                                     addCounter={item.addCounter}
                                     image={item.image}
                                     category={item.category}
-                                    addCounter={addCounter}
                                 />
                                     
                             :

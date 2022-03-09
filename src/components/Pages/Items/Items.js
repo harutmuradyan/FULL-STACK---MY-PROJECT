@@ -12,7 +12,7 @@ const Items = ({data , title , addCounter , image }) => {
                 <div className="items-content">
                     {data.map(item =>
                         (
-                            item.id < 6
+                            item.id <= 5
                             ?
                             <Item
                                 key={item.id}
@@ -21,8 +21,6 @@ const Items = ({data , title , addCounter , image }) => {
                                 addCounter={item.addCounter}
                                 image={item.image}
                                 category={item.category}
-                                // eslint-disable-next-line react/jsx-no-duplicate-props
-                                addCounter={addCounter}
                                 />
                             :
                             <p className="error">error</p>

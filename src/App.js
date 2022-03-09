@@ -2,15 +2,10 @@ import React,{useState , useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import Content from './components/Content/Content';
 import './App.scss';
-import { data } from './redux/constants/actions-types';
 
 function App() {
 
-  const [carts,setCarts] = useState(
-    data
-  );
-
-
+  const [carts,setCarts] = useState([]);
 
   const [counter, setCounter] = useState(0);
   const [modalActive,setModalActive] = useState(false);
@@ -21,12 +16,9 @@ function App() {
 
 
   useEffect(() => {
-    fetch('')
+    fetch("http://localhost:3000/posts")
       .then(res => res.json())
       .then(myRes => setCarts(myRes))
-      .catch(err => {
-        console.error(err);
-      });
   }, [])
 
   console.log(carts)
