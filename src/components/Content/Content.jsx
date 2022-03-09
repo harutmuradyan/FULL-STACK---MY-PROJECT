@@ -15,83 +15,76 @@ import Romance from "../Pages/Categorys/Romance/Romance";
 import Thiller from "../Pages/Categorys/Thriller/Thiller";
 import Comedy from "../Pages/Categorys/Comedy/Comedy";
 import Mystery from "../Pages/Categorys/Mystery/Mystery";
-const Content = ({addCounter , data}) => {
+const Content = ({addCounter}) => {
 
 
-    return (
-        <div className="content">
-            <Routes>
-              <Route path='/'
-                     element={
-                            <Product 
-                            addCounter={addCounter}
-                            data={data}
-                     />
-                     }
-              />
-              <Route path='/about' 
-                     element={<About/>}
-              />
-              <Route path='/contact'
-                     element={<Contact/>}
-              />
-              <Route path='/login' 
-                     element={<Login/>}
-              />
-              <Route path='/register' 
-                     element={<Register/>}
-              />
-              <Route path='/product/category/action' 
-                     element={
-                            <Action data={data}
-                                    addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/comedy' 
-                     element={
-                            <Comedy data={data}
-                                    addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/drama' 
-                     element={
-                            <Drama data={data}
-                                   addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/fantasy' 
-                     element={
-                            <Fantasy data={data}
-                                     addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/romance' 
-                     element={
-                            <Romance data={data}
-                                     addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/mystery' 
-                     element={
-                            <Mystery data={data}
-                                     addCounter={addCounter}
-                     />
-                     }
-              />
-              <Route path='/product/category/thiller' 
-                     element={
-                            <Thiller data={data}
-                                     addCounter={addCounter}
-                     />
-                     }
-              />
-            </Routes>
-        </div>
+
+       return (
+              <div className="content">
+                     <Routes>
+                            <Route path='/'
+                                   element={
+                                          <Product 
+                                          addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/about' 
+                                   element={<About/>}
+                            />
+                            <Route path='/contact'
+                                   element={<Contact/>}
+                            />
+                            <Route path='/login' 
+                                   element={<Login/>}
+                            />
+                            <Route path='/register' 
+                                   element={<Register/>}
+                            />
+                            <Route path='/product/category/action' 
+                                   element={
+                                          <Action addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/comedy' 
+                                   element={
+                                          <Comedy addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/drama' 
+                                   element={
+                                          <Drama addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/fantasy' 
+                                   element={
+                                          <Fantasy addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/romance' 
+                                   element={
+                                          <Romance addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/mystery' 
+                                   element={
+                                          <Mystery addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path='/product/category/thiller' 
+                                   element={
+                                          <Thiller addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                     </Routes>
+              </div>
     )
 }
 

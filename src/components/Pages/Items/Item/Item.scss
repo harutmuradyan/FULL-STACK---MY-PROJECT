@@ -61,5 +61,39 @@
             text-transform: uppercase;
             cursor: pointer;
         }
+        .movie-video {
+            position: fixed;
+            width: 100%;
+            left:100px;
+            height: 50%;
+            position: fixed;
+            left: 120px;
+            display: none;
+            .movie-video__block {
+                display: flex;
+                justify-content: center;
+                width: 80%;
+                background-color:#040404;
+                border:solid 1px white;
+                height: 300px;
+                .video {
+                    flex-basis: 90%;
+                    height: 100%;
+                    margin: 0 auto;
+                    display: block;
+                }
+                .close {
+                    flex-basis: 3%;
+                    height: 25px;
+                    background-color:#040404;
+                    border:solid 1px white;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+        .movie-video.active {
+            display: block;
+        }
     }
 }

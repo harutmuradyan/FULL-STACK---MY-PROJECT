@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
 import Item from "./Item/Item";
 import "./Items.scss";
+import { MyContext } from "../../../App";
 
-const Items = ({data , title , addCounter , image }) => {
+const Items = ({ title , addCounter , image }) => {
+
+    const value = useContext(MyContext);
+    
+        const arr = []
+        value.forEach(elem => {
+            if (elem.id < 6 ) {
+            arr.push(elem)
+            }
+        })
+
+
     return (
         <>
             <div className="items">
                 <h2 className="items-title">{title}</h2>
                 <div className="items-content">
-                    {data.map(item =>
-                        (
-                            item.id <= 5
-                            ?
+                    {
+                        arr.map((item ,index) => (
                             <Item
-                                key={item.id}
+                                key={index}
                                 name={item.name}  
                                 body={item.body}  
-                                addCounter={item.addCounter}
+                                addCounter={addCounter}
                                 image={item.image}
                                 category={item.category}
-                                />
-                            :
-                            <p className="error">error</p>
-                        )
-                                
-                    )}
+                                /> 
+                        ))
+                    }          
                 </div>
                 <div className="items-btn__block">
                     <Link to="/product/category" className="items-btn__seeMore">
@@ -39,8 +45,5 @@ const Items = ({data , title , addCounter , image }) => {
     )
 }
 
-Items.propTypes = {
-    data : PropTypes.array.isRequired,
-}
 
 export default Items;

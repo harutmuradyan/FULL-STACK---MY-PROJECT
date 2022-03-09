@@ -3,10 +3,17 @@ import Layout from './components/Layout/Layout';
 import Content from './components/Content/Content';
 import './App.scss';
 
+export const MyContext = React.createContext()
+
 function App() {
 
-  const [carts,setCarts] = useState([]);
+  const store = {
+      counter : function addCounter () {
+        setCounter(counter + 1);
+      }
+  }
 
+  const [carts,setCarts] = useState([]);
   const [counter, setCounter] = useState(0);
   const [modalActive,setModalActive] = useState(false);
 
@@ -14,23 +21,23 @@ function App() {
     setCounter(counter + 1);
   }
 
-
   useEffect(() => {
     fetch("http://localhost:3000/posts")
       .then(res => res.json())
       .then(myRes => setCarts(myRes))
   }, [])
 
-  console.log(carts)
   return (
     <div className='app'>
-       <Layout counter={counter}
-               modalActive={modalActive} 
-               setModalActive={setModalActive} 
-               data={carts}
-               >
-        <Content addCounter={addCounter} data={carts}/>
-      </Layout>
+      <MyContext.Provider value={carts}>
+        <Layout counter={counter}
+                modalActive={modalActive} 
+                setModalActive={setModalActive} 
+                data={carts}
+                >
+          <Content addCounter={addCounter} data={carts}/>
+        </Layout>
+      </MyContext.Provider>
     </div>
   );
 }

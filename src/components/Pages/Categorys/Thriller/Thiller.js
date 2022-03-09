@@ -1,33 +1,35 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-import React from "react";
+import React  , {useContext} from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
 import Item from "../../Items/Item/Item";
 import './Thiller.scss'
+import { MyContext } from "../../../../App";
 
-const Thiller = ({data , addCounter }) => {
+const Thiller = ({ addCounter }) => {
+
+    const value = useContext(MyContext);
+
+    const arr = []
+    value.forEach(elem => {
+        if (elem.category === "thriller" ) {
+        arr.push(elem)
+        }
+    })
+
     return (
         <>
             <div className="actions">
                 <h2 className="items-title">Thriller</h2>
                 <div className="items-content">
                     {
-                        data.map(item => (
-                            item.category === "thriller" 
-                            ?
-                                
-                                <Item
-                                    key={item.id}
-                                    name={item.name}  
-                                    body={item.body}  
-                                    addCounter={item.addCounter}
-                                    image={item.image}
-                                    category={item.category}
-                                    addCounter={addCounter}
-                                />
-                                    
-                            :
-                            <p className="error">error</p>            
+                        arr.map((item , index) => (
+                            <Item
+                                key={index}
+                                name={item.name}  
+                                body={item.body}  
+                                addCounter={addCounter}
+                                image={item.image}
+                                category={item.category}
+                            />   
                         ))
                     }
                 </div>
@@ -40,10 +42,6 @@ const Thiller = ({data , addCounter }) => {
             </div>
         </>
     )
-}
-
-Thiller.propTypes = {
-    data : PropTypes.array.isRequired,
 }
 
 export default Thiller;
