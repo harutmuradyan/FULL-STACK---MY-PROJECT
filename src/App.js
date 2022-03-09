@@ -6,13 +6,6 @@ import './App.scss';
 export const MyContext = React.createContext()
 
 function App() {
-
-  const store = {
-      counter : function addCounter () {
-        setCounter(counter + 1);
-      }
-  }
-
   const [carts,setCarts] = useState([]);
   const [counter, setCounter] = useState(0);
   const [modalActive,setModalActive] = useState(false);
@@ -29,6 +22,7 @@ function App() {
 
   return (
     <div className='app'>
+    
       <MyContext.Provider value={carts}>
         <Layout counter={counter}
                 modalActive={modalActive} 

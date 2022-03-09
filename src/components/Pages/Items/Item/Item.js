@@ -1,21 +1,9 @@
-import React , {useState , useCallback} from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import './Item.scss';
 
-const Item = ({id,title,name,image,body,addCounter}) => {
+const Item = ({image,body,addCounter,movieId}) => {
 
-    const [play, setPlay] = useState(false);
-
-    const playVideo = useCallback(
-        () => {
-            setPlay(true)
-        },[],
-    );
-
-    const closeVideo = useCallback(
-        () => {
-            setPlay(false)
-        },[],
-    );
 
     return (
         <>
@@ -33,17 +21,11 @@ const Item = ({id,title,name,image,body,addCounter}) => {
                     </button>
                 </div>
                 <div className="item-see__content">
-                    <button  className="item-see__button" onClick={playVideo}>
-                        By See
+                    <button className="item-see__button">
+                        <Link to="/product/category/id"  className="item-see__link">
+                            By See
+                        </Link>
                     </button>
-                    <div className={play ? "movie-video active" : "movie-video"}>
-                        <div className="movie-video__block">
-                            <video className="video" controls  >
-                                <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4"/>
-                            </video>
-                            <button className="close" onClick={closeVideo}>X</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </>

@@ -27,10 +27,11 @@ const Items = ({ title , addCounter , image }) => {
                                 key={index}
                                 name={item.name}  
                                 body={item.body}  
-                                addCounter={addCounter}
+                                value={addCounter}
                                 image={item.image}
                                 category={item.category}
-                                /> 
+                                id= {item.id}
+                                />
                         ))
                     }          
                 </div>

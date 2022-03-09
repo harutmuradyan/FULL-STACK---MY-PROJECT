@@ -15,6 +15,7 @@ import Romance from "../Pages/Categorys/Romance/Romance";
 import Thiller from "../Pages/Categorys/Thriller/Thiller";
 import Comedy from "../Pages/Categorys/Comedy/Comedy";
 import Mystery from "../Pages/Categorys/Mystery/Mystery";
+import PlayVideo from "../Pages/Items/Item/PlayVideo/PlayVideo";
 const Content = ({addCounter}) => {
 
 
@@ -80,6 +81,12 @@ const Content = ({addCounter}) => {
                             <Route path='/product/category/thiller' 
                                    element={
                                           <Thiller addCounter={addCounter}
+                                   />
+                                   }
+                            />
+                            <Route path="/product/category/id" 
+                                   element={
+                                          <PlayVideo
                                    />
                                    }
                             />
